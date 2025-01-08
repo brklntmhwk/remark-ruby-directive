@@ -1,0 +1,61 @@
+{
+  "name": "remark-ruby-directive",
+  "version": "0.1.0",
+  "description": "A remark plugin to add ruby (furigana) to Markdown text content.",
+  "type": "module",
+  "exports": "./dist/index.js",
+  "author": "brklntmhwk",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brklntmhwk/remark-ruby-directive"
+  },
+  "files": [
+    "dist/*",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "remark",
+    "remark-plugin",
+    "ruby",
+    "furigana",
+    "markdown",
+    "html"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "format": "bunx biome format ./src ./test",
+    "format:fix": "bunx biome format --write ./src ./test",
+    "lint": "bunx biome lint ./src ./test",
+    "lint:fix": "bunx biome lint --write ./src ./test",
+    "check": "bunx biome check ./src ./test",
+    "check:fix": "bunx biome check --write ./src ./test",
+    "test-type": "type-coverage"
+  },
+  "typeCoverage": {
+    "atLeast": 100,
+    "detail": true,
+    "strict": true,
+    "ignoreCatch": true
+  },
+  "dependencies": {
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@types/bun": "latest",
+    "@types/mdast": "^4.0.4",
+    "@types/unist": "^3.0.3",
+    "mdast-util-directive": "^3.0.0",
+    "rehype-stringify": "^10.0.1",
+    "remark-directive": "^3.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.1",
+    "remark-stringify": "^11.0.0",
+    "type-coverage": "^2.29.7",
+    "typescript": "^5.6.3"
+  }
+}
