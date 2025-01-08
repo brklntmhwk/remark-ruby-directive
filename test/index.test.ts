@@ -42,15 +42,61 @@ const parseMarkdown = mock(async (markdown: string, debug = false) => {
 });
 
 describe("Test the basic usage", () => {
-  test("Ruby with full-width parentheses", async () => {
-    const input = `:ruby[超電磁砲（レールガン）]`;
+  test("Ruby with half-width parentheses", async () => {
+    const input = ":ruby[とある科学の超電磁砲(レールガン)]";
     const output = `
     <ruby>
-      超電磁砲
+      とある科学の超電磁砲
+      <rp>(</rp>
+      <rt>レールガン</rt>
+      <rp>)</rp>
+    </ruby>
+    `;
+
+    const html = await parseMarkdown(input);
+
+    expect(normalizeHtml(html)).toBe(normalizeHtml(output));
+  });
+
+  test("Ruby with multiple half-width parentheses", async () => {
+    const input =
+      ":ruby[とある科学の超電磁砲(レールガン)ととある魔術の禁書目録(インデックス)]";
+    // The first regex does not match if multiple parentheses exist and thus it returns halfway through.
+    const output = `
+    <p>
+      <div>とある科学の超電磁砲(レールガン)ととある魔術の禁書目録(インデックス)</div>
+    </p>
+    `;
+
+    const html = await parseMarkdown(input);
+
+    expect(normalizeHtml(html)).toBe(normalizeHtml(output));
+  });
+
+  test("Ruby with full-width parentheses", async () => {
+    const input = ":ruby[とある科学の超電磁砲（レールガン）]";
+    const output = `
+    <ruby>
+      とある科学の超電磁砲
       <rp>（</rp>
       <rt>レールガン</rt>
       <rp>）</rp>
     </ruby>
+    `;
+
+    const html = await parseMarkdown(input);
+
+    expect(normalizeHtml(html)).toBe(normalizeHtml(output));
+  });
+
+  test("Ruby with multiple full-width parentheses", async () => {
+    const input =
+      ":ruby[とある科学の超電磁砲（レールガン）ととある魔術の禁書目録（インデックス）]";
+    // The first regex does not match if multiple parentheses exist and thus it returns halfway through.
+    const output = `
+    <p>
+      <div>とある科学の超電磁砲（レールガン）ととある魔術の禁書目録（インデックス）</div>
+    </p>
     `;
 
     const html = await parseMarkdown(input);
