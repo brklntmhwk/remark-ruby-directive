@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Upgrade to the prod version
+
 ## 0.1.2-beta.0 - 2025-01-08
 ### Changed
 - Parse the `node` itself instead of the `parent`
