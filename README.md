@@ -79,7 +79,7 @@ console.log(normalizeHtml(html));
 Yields:
 
 ```html
-<ruby>
+<ruby data-ruby="レールガン">
   とある科学の超電磁砲
   <rp>(</rp>
   <rt>レールガン</rt>
@@ -111,7 +111,7 @@ With the above-mentioned points considered, some examples are as follows:
 Yields:
 
 ```html
-<ruby>
+<ruby data-ruby="レールガン">
   とある科学の超電磁砲
   <rp>(</rp>
   <rt>レールガン</rt>
@@ -128,7 +128,7 @@ Yields:
 Yields:
 
 ```html
-<ruby>
+<ruby data-ruby="レールガン">
   とある科学の超電磁砲
   <rp>（</rp>
   <rt>レールガン</rt>

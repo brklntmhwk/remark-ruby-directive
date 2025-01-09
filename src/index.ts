@@ -27,7 +27,7 @@ const remarkRubyDirective: Plugin<[], Root> = () => {
         hName: node.name,
         hProperties: {
           ...node.attributes,
-          dataRuby: value,
+          dataRuby: ruby,
         },
         hChildren: [
           {

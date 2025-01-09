@@ -46,7 +46,7 @@ describe("Test the basic usage", () => {
     const input = ":ruby[とある科学の超電磁砲(レールガン)]";
     const output = `
 		<p>
-			<ruby data-ruby="とある科学の超電磁砲">
+			<ruby data-ruby="レールガン">
 				とある科学の超電磁砲
 				<rp>(</rp>
 				<rt>レールガン</rt>
@@ -79,7 +79,7 @@ describe("Test the basic usage", () => {
     const input = ":ruby[とある科学の超電磁砲（レールガン）]";
     const output = `
 		<p>
-			<ruby data-ruby="とある科学の超電磁砲">
+			<ruby data-ruby="レールガン">
 				とある科学の超電磁砲
 				<rp>（</rp>
 				<rt>レールガン</rt>
